@@ -1,0 +1,127 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# R Exercises
+
+Start off by setting your working directory to the repository. 
+
+```{r}
+
+```
+
+
+For the exercise below you should import the Iris Dataset as a dataframe called iris.df.
+
+```{r}
+
+```
+
+
+
+(1). Create a variable called sepal_width.mean that contains the mean of the sepal_width column of iris.df.
+
+```{r}
+
+```
+
+
+(2). Create a new column of iris.df called sepal_area that is equal to the sepal_width times sepal_length.
+```{r}
+
+```
+
+
+(3). Create a new dataframe iristrain.df that includes the first 75 rows of the iris dataframe.
+
+```{r}
+
+```
+
+
+ (4). Create a new dataframe iristest.df that includes the last 75 rows of the iris dataframe.
+
+```{r}
+
+```
+
+
+(5). Create a new vector sepal_length from the sepal_length column of the iris dataframe.
+
+```{r}
+
+```
+
+
+### Titanic Exercises 
+For the exercise below you should import train.csv and test.csv files from the Titanic dataset.
+
+(6). While we can submit our answer to Kaggle to see how it will perform, we can also utilize our test data to assess accuracy. Accuracy is the percentage of predictions made correctly-i.e., the percentage of people in which our prediction regarding their survival.
+
+a. Create columns in the training dataset PredEveryoneDies and PredGender with the same predictions as we had for the Python version.  For example, PredEveryoneDies should have a value of 0 throughout and PredGender should have a value of 1 for women and 0 for men.
+
+```{r}
+
+```
+
+
+b. Create variables AccEveryoneDies and AccGender using a calculation of accuracy of predictions for the training dataset for the respective columns.
+```{r}
+
+```
+
+(7). Notice how we are utilizing the code to select out the passengerID and the Survived column and generating a submission file over and over? This is in need of a function. Create a generate_submission function that accepts a DataFrame, a target column, and a filename and writes out the submission file with just the passengerID and the Survived columns, where the survived column is equal to the target column. It should then return a DataFrame with the passengerID and the Survived columns.
+
+```{r}
+
+```
+
+
+Executing the code block.  It should return a dataframe with just passengerID and the Survived column. (You will have to execute this to pass tests.)
+`submitdie <- generate_submission(train, "PredEveryoneDies", "submiteveryonedies.csv")`
+
+```{r}
+
+```
+
+
+(8). In accordance with the women and children first protocol, we hypothesize that our model could be improved by including whether the individual was a child in addition to gender. After coding survival based on gender, update your recommendation to prediction in the training dataset survival based on age.
+
+`train$PredGenderAge13` should be the prediction incorporating both `Gender` and whether `Age < 13`. `train$PredGenderAge18` should be the prediction incorporating both `Gender` and whether `Age < 18`.
+
+`AccGenderAge13` should be the accuracy of the age prediction, based on `train$PredGenderAge13`. `AccGenderAge18` should be the accuracy of the age prediction, based on `train$PredGenderAge18`.
+
+
+**Before doing operations on the Age column though, just go ahead and replace all NAs with the mean age for the column.**
+
+```{r}
+
+```
+
+
+(9). You should find that specifying a child at a cutoff of 13 performs better than 18. Create a new `column` child in the test and train DataFrames that is 1 if Age < 13 and 0 otherwise. This is an example of a feature.
+
+```{r}
+
+```
+
+
+# ## Running Tests
+# If using the anaconda version, install with:
+# conda install -c r r-testthat #run from terminal/Anaconda prompt.
+# If you downloaded Rstudio directly use:
+
+```{r}
+install.packages("testthat")  
+#This will load the library.
+library('testthat')
+#This will run the tests in the console for review.
+test_file("test.intro-r-exercises.R", reporter = "tap")
+```
+
+
+## Create your submission.  
+Once you have finished coding everything just click Knit -> PDF to create a pdf of the output. 
+ 
