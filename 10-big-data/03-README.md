@@ -13,3 +13,12 @@ Files not included here because of licensing.
 
 URLS for Importing. 
 
+
+01-intro-mapreduce.ipynb
+*https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/10-big-data/01-intro-mapreduce.ipynb*
+
+02-intro-spark.ipynb
+*https://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/10-big-data/02-intro-spark.ipynb*
+
+03-spark-questions.ipynb (Due 4/4 11:59 PM)
+*shttps://raw.githubusercontent.com/rpi-techfundamentals/spring2019-materials/master/10-big-data/03-spark-questions.ipynb*
