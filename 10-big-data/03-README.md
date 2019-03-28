@@ -10,3 +10,6 @@ Files not included here because of licensing.
 
 **Databricks for Data Scientists**
 [https://docs.databricks.com/_static/notebooks/databricks-for-data-scientists.html](https://docs.databricks.com/_static/notebooks/databricks-for-data-scientists.html)
+
+URLS for Importing. 
+
